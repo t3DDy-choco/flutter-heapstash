@@ -10,7 +10,7 @@ import 'package:flutter/material.dart';
 ///
 /// The widget is composed on an [Icon] and [Text]. Tapping on the widget shows
 /// a colored [InkWell] animation.
-final _height = 8.0;
+final _height = 100.0;
 final _borderRadius = BorderRadius.circular(_height / 2);
 
 class Category extends StatelessWidget {
@@ -67,7 +67,7 @@ class Category extends StatelessWidget {
                   child: Text(
                     name,
                     textAlign: TextAlign.center,
-                    style: Theme.of(context).textTheme.headline1,
+                    style: TextStyle(fontSize: 16.0),
                   ),
                 ),
               ],
