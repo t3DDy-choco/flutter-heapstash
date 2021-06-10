@@ -29,9 +29,7 @@ class Category extends StatelessWidget {
           borderRadius: _borderRadius,
           highlightColor: color,
           splashColor: color,
-          onTap: () {
-            print("I was tapped");
-          },
+          onTap: () => print("I was tapped"),
           child: Padding(
             padding: EdgeInsets.all(8.0),
             child: Row(
