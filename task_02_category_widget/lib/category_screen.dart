@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:task_02_category_widget/category.dart';
 
-// TODO: Check if we need to import anything
-
-// TODO: Define any constants
+const _listSize = 8;
+const _fontSize = 30.0;
+const _elevation = 0.0;
+const _themeColor = Colors.lightBlueAccent;
 
 class CategoryScreen extends StatelessWidget {
   const CategoryScreen();
@@ -31,13 +33,32 @@ class CategoryScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: Create a list of the eight Categories, using the names and colors
-    // from above. Use a placeholder icon, such as `Icons.cake` for each
-    // Category. We'll add custom icons later.
-    final listView = Container();
+    final listView = Container(
+      color: _themeColor,
+      child: ListView.builder(
+        itemCount: _listSize,
+        itemBuilder: (BuildContext context, int index) {
+          return Category(
+            name: _categoryNames[index],
+            icon: Icons.cake,
+            color: _baseColors[index],
+          );
+        },
+      ),
+    );
 
-    // TODO: Create an App Bar
-    final appBar = AppBar();
+    final appBar = AppBar(
+      elevation: _elevation,
+      backgroundColor: _themeColor,
+      centerTitle: true,
+      title: Text(
+        "Unit Converter",
+        style: TextStyle(
+          fontSize: _fontSize,
+          color: Colors.black,
+        ),
+      ),
+    );
 
     return Scaffold(
       appBar: appBar,

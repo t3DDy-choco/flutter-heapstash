@@ -10,7 +10,7 @@ final _borderRadius = BorderRadius.circular(_height / 2);
 class Category extends StatelessWidget {
   final String name;
   final IconData icon;
-  final MaterialColor color;
+  final ColorSwatch color;
 
   const Category({
     Key key,
