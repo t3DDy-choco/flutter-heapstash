@@ -67,7 +67,7 @@ class Category extends StatelessWidget {
                   child: Text(
                     name,
                     textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 16.0),
+                    style: TextStyle(fontSize: 24.0),
                   ),
                 ),
               ],
