@@ -10,4 +10,4 @@ packages
 pubspec.lock
 .flutter-plugins
 .filecache
-.app.dill
+app.dill
