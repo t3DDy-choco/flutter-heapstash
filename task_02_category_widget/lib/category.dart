@@ -40,6 +40,7 @@ class Category extends StatelessWidget {
                   child: Icon(
                     icon,
                     size: 60.0,
+                    color: color,
                   ),
                 ),
                 Center(

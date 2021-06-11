@@ -31,6 +31,17 @@ class CategoryScreen extends StatelessWidget {
     Colors.red,
   ];
 
+  static const _icons = <IconData>[
+    Icons.linear_scale,
+    Icons.aspect_ratio_rounded,
+    Icons.check_box_outline_blank_rounded,
+    Icons.rice_bowl,
+    Icons.timelapse,
+    Icons.storage_rounded,
+    Icons.lightbulb_outline_rounded,
+    Icons.attach_money_rounded,
+  ];
+
   @override
   Widget build(BuildContext context) {
     final listView = Container(
@@ -40,7 +51,7 @@ class CategoryScreen extends StatelessWidget {
         itemBuilder: (BuildContext context, int index) {
           return Category(
             name: _categoryNames[index],
-            icon: Icons.cake,
+            icon: _icons[index],
             color: _baseColors[index],
           );
         },
