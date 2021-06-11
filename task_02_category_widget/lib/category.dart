@@ -10,7 +10,7 @@ final _borderRadius = BorderRadius.circular(_height / 2);
 class Category extends StatelessWidget {
   final String name;
   final IconData icon;
-  final MaterialColor color;
+  final ColorSwatch color;
 
   const Category({
     Key key,
@@ -29,9 +29,7 @@ class Category extends StatelessWidget {
           borderRadius: _borderRadius,
           highlightColor: color,
           splashColor: color,
-          onTap: () {
-            print("I was tapped");
-          },
+          onTap: () => print("I was tapped"),
           child: Padding(
             padding: EdgeInsets.all(8.0),
             child: Row(
@@ -42,6 +40,7 @@ class Category extends StatelessWidget {
                   child: Icon(
                     icon,
                     size: 60.0,
+                    color: color,
                   ),
                 ),
                 Center(
