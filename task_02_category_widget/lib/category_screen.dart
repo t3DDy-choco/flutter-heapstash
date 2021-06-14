@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:task_02_category_widget/category.dart';
+import 'unit.dart';
 
 const _listSize = 8;
 const _fontSize = 30.0;
@@ -42,6 +43,17 @@ class CategoryScreen extends StatelessWidget {
     Icons.attach_money_rounded,
   ];
 
+  /// Returns a list of mock [Unit]s.
+  List<Unit> _retrieveUnitList(String categoryName) {
+    return List.generate(10, (int i) {
+      i += 1;
+      return Unit(
+        name: '$categoryName Unit $i',
+        conversion: i.toDouble(),
+      );
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     final listView = Container(
@@ -53,6 +65,7 @@ class CategoryScreen extends StatelessWidget {
             name: _categoryNames[index],
             icon: _icons[index],
             color: _baseColors[index],
+            units: _retrieveUnitList(_categoryNames[index]),
           );
         },
       ),

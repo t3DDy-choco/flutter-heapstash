@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:meta/meta.dart';
+import 'converter_screen.dart';
+import 'unit.dart';
 
 /// A custom [Category] widget.
 ///
@@ -11,13 +14,24 @@ class Category extends StatelessWidget {
   final String name;
   final IconData icon;
   final ColorSwatch color;
+  final List<Unit> units;
 
   const Category({
     Key key,
     @required this.name,
     @required this.icon,
     @required this.color,
-  }) : super(key: key);
+    @required this.units,
+  })  : assert(name != null),
+        assert(color != null),
+        assert(icon != null),
+        assert(units != null),
+        super(key: key);
+
+  /// Navigates to the [ConverterScreen].
+  void _navigateToConverter(BuildContext context) {
+    // TODO: Using the Navigator, navigate to the [ConverterRoute]
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -29,6 +43,9 @@ class Category extends StatelessWidget {
           borderRadius: _borderRadius,
           highlightColor: color,
           splashColor: color,
+          // We can use either the () => function() or the () { function(); }
+          // syntax.
+          // TODO: Update this onTap property to call _navigateToConverter()
           onTap: () => print("I was tapped"),
           child: Padding(
             padding: EdgeInsets.all(8.0),
