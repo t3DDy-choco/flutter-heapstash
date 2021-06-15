@@ -10,20 +10,25 @@ import 'unit.dart';
 /// because it is responsible for the UI at the route's destination.
 class ConverterScreen extends StatelessWidget {
   /// Units for this [Category].
+  final String name;
   final List<Unit> units;
+  final ColorSwatch color;
 
   /// This [ConverterScreen] requires the color and units to not be null.
-  // TODO: Pass in the [Category]'s color
   const ConverterScreen({
+    @required this.name,
     @required this.units,
-  }) : assert(units != null);
+    @required this.color,
+  })  : assert(units != null),
+        assert(color != null),
+        assert(name != null);
 
   @override
   Widget build(BuildContext context) {
     // Here is just a placeholder for a list of mock units
     final unitWidgets = units.map((Unit unit) {
-      // TODO: Set the color for this Container
       return Container(
+        color: color,
         margin: EdgeInsets.all(8.0),
         padding: EdgeInsets.all(16.0),
         child: Column(
