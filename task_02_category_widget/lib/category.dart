@@ -24,7 +24,6 @@ class Category extends StatelessWidget {
         assert(units != null),
         super(key: key);
 
-  /// Navigates to the [ConverterScreen].
   void _navigateToConverter(BuildContext context) {
     if (Navigator.of(context).canPop()) {
       Navigator.of(context).pop();
@@ -40,10 +39,9 @@ class Category extends StatelessWidget {
             style: Theme.of(context).textTheme.headline4,
           ),
           centerTitle: true,
-          backgroundColor: color[100],
+          backgroundColor: color,
         ),
         body: ConverterScreen(
-          name: name,
           units: units,
           color: color,
         ),
@@ -61,9 +59,7 @@ class Category extends StatelessWidget {
           borderRadius: _borderRadius,
           highlightColor: color,
           splashColor: color,
-          onTap: () {
-            _navigateToConverter(context);
-          },
+          onTap: () => _navigateToConverter(context),
           child: Padding(
             padding: EdgeInsets.all(8.0),
             child: Row(
@@ -81,7 +77,7 @@ class Category extends StatelessWidget {
                   child: Text(
                     name,
                     textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 24.0),
+                    style: Theme.of(context).textTheme.headline5,
                   ),
                 ),
               ],

@@ -7,9 +7,14 @@ const _fontSize = 30.0;
 const _elevation = 0.0;
 const _themeColor = Colors.lightBlueAccent;
 
-class CategoryScreen extends StatelessWidget {
+class CategoryScreen extends StatefulWidget {
   const CategoryScreen();
 
+  @override
+  createState() => _CategoryScreenState();
+}
+
+class _CategoryScreenState extends State<CategoryScreen> {
   static const _categoryNames = <String>[
     "Length",
     "Area",
@@ -43,7 +48,6 @@ class CategoryScreen extends StatelessWidget {
     Icons.attach_money_rounded,
   ];
 
-  /// Returns a list of mock [Unit]s.
   List<Unit> _retrieveUnitList(String categoryName) {
     return List.generate(10, (int i) {
       i += 1;
