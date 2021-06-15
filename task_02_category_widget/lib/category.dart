@@ -3,8 +3,8 @@ import 'package:meta/meta.dart';
 import 'converter_screen.dart';
 import 'unit.dart';
 
-final _height = 100.0;
-final _borderRadius = BorderRadius.circular(_height / 2);
+final _rowHeight = 100.0;
+final _borderRadius = BorderRadius.circular(_rowHeight / 2);
 
 class Category extends StatelessWidget {
   final String name;
@@ -25,28 +25,27 @@ class Category extends StatelessWidget {
         super(key: key);
 
   void _navigateToConverter(BuildContext context) {
-    if (Navigator.of(context).canPop()) {
-      Navigator.of(context).pop();
-    }
-
-    Navigator.of(context)
-        .push(MaterialPageRoute<Null>(builder: (BuildContext context) {
-      return Scaffold(
-        appBar: AppBar(
-          elevation: 1.0,
-          title: Text(
-            name,
-            style: Theme.of(context).textTheme.headline4,
+    Navigator.of(context).push(MaterialPageRoute<Null>(
+      builder: (BuildContext context) {
+        return Scaffold(
+          appBar: AppBar(
+            elevation: 1.0,
+            title: Text(
+              name,
+              style: Theme.of(context).textTheme.headline4,
+            ),
+            centerTitle: true,
+            backgroundColor: color,
           ),
-          centerTitle: true,
-          backgroundColor: color,
-        ),
-        body: ConverterScreen(
-          units: units,
-          color: color,
-        ),
-      );
-    }));
+          body: ConverterScreen(
+            units: units,
+            color: color,
+          ),
+          // screen isn't resized now if keyboard id opened.
+          resizeToAvoidBottomInset: false,
+        );
+      },
+    ));
   }
 
   @override
@@ -54,11 +53,11 @@ class Category extends StatelessWidget {
     return Material(
       color: Colors.transparent,
       child: Container(
-        height: _height,
+        height: _rowHeight,
         child: InkWell(
           borderRadius: _borderRadius,
-          highlightColor: color,
-          splashColor: color,
+          highlightColor: color['highlight'],
+          splashColor: color['splash'],
           onTap: () => _navigateToConverter(context),
           child: Padding(
             padding: EdgeInsets.all(8.0),
@@ -70,14 +69,14 @@ class Category extends StatelessWidget {
                   child: Icon(
                     icon,
                     size: 60.0,
-                    color: color,
+                    color: color['splash'],
                   ),
                 ),
                 Center(
                   child: Text(
                     name,
                     textAlign: TextAlign.center,
-                    style: Theme.of(context).textTheme.headline5,
+                    style: TextStyle(color: color['splash'], fontSize: 24),
                   ),
                 ),
               ],
