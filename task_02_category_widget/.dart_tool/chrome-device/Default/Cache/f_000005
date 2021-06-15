@@ -1,0 +1,903 @@
+define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/task_02_category_widget/unit.dart', 'packages/flutter/src/widgets/scroll_view.dart', 'packages/task_02_category_widget/category.dart', 'packages/flutter/src/painting/colors.dart', 'packages/flutter/src/material/icon_button.dart', 'packages/flutter/src/painting/strut_style.dart', 'packages/flutter/src/material/colors.dart', 'packages/flutter/src/widgets/icon_data.dart'], (function load__packages__task_02_category_widget__category_screen_dart(dart_sdk, packages__flutter__src__widgets__widget_span$46dart, packages__task_02_category_widget__unit$46dart, packages__flutter__src__widgets__scroll_view$46dart, packages__task_02_category_widget__category$46dart, packages__flutter__src__painting__colors$46dart, packages__flutter__src__material__icon_button$46dart, packages__flutter__src__painting__strut_style$46dart, packages__flutter__src__material__colors$46dart, packages__flutter__src__widgets__icon_data$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const ui = dart_sdk.ui;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  const container = packages__flutter__src__widgets__widget_span$46dart.src__widgets__container;
+  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
+  const text = packages__flutter__src__widgets__widget_span$46dart.src__widgets__text;
+  const unit = packages__task_02_category_widget__unit$46dart.unit;
+  const scroll_view = packages__flutter__src__widgets__scroll_view$46dart.src__widgets__scroll_view;
+  const category = packages__task_02_category_widget__category$46dart.category;
+  const colors = packages__flutter__src__painting__colors$46dart.src__painting__colors;
+  const app_bar = packages__flutter__src__material__icon_button$46dart.src__material__app_bar;
+  const scaffold = packages__flutter__src__material__icon_button$46dart.src__material__scaffold;
+  const text_style = packages__flutter__src__painting__strut_style$46dart.src__painting__text_style;
+  const colors$ = packages__flutter__src__material__colors$46dart.src__material__colors;
+  const icon_data = packages__flutter__src__widgets__icon_data$46dart.src__widgets__icon_data;
+  var category_screen = Object.create(dart.library);
+  var $toDouble = dartx.toDouble;
+  var $_get = dartx._get;
+  dart._checkModuleNullSafetyMode(false);
+  var T = {
+    UnitL: () => (T.UnitL = dart.constFn(dart.legacy(unit.Unit)))(),
+    ListOfUnitL: () => (T.ListOfUnitL = dart.constFn(core.List$(T.UnitL())))(),
+    intL: () => (T.intL = dart.constFn(dart.legacy(core.int)))(),
+    intLToUnitL: () => (T.intLToUnitL = dart.constFn(dart.fnType(T.UnitL(), [T.intL()])))(),
+    ColorSwatchL: () => (T.ColorSwatchL = dart.constFn(dart.legacy(colors.ColorSwatch)))(),
+    _LocationL: () => (T._LocationL = dart.constFn(dart.legacy(widget_inspector._Location)))(),
+    CategoryL: () => (T.CategoryL = dart.constFn(dart.legacy(category.Category)))(),
+    BuildContextL: () => (T.BuildContextL = dart.constFn(dart.legacy(framework.BuildContext)))(),
+    BuildContextLAndintLToCategoryL: () => (T.BuildContextLAndintLToCategoryL = dart.constFn(dart.fnType(T.CategoryL(), [T.BuildContextL(), T.intL()])))(),
+    StringL: () => (T.StringL = dart.constFn(dart.legacy(core.String)))(),
+    ColorL: () => (T.ColorL = dart.constFn(dart.legacy(ui.Color)))(),
+    IconDataL: () => (T.IconDataL = dart.constFn(dart.legacy(icon_data.IconData)))()
+  };
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "name",
+        [_Location_column]: 13,
+        [_Location_line]: 69,
+        [_Location_file]: null
+      });
+    },
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 13,
+        [_Location_line]: 70,
+        [_Location_file]: null
+      });
+    },
+    get C4() {
+      return C[4] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "color",
+        [_Location_column]: 13,
+        [_Location_line]: 71,
+        [_Location_file]: null
+      });
+    },
+    get C5() {
+      return C[5] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "units",
+        [_Location_column]: 13,
+        [_Location_line]: 72,
+        [_Location_file]: null
+      });
+    },
+    get C1() {
+      return C[1] = dart.constList([C[2] || CT.C2, C[3] || CT.C3, C[4] || CT.C4, C[5] || CT.C5], T._LocationL());
+    },
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[1] || CT.C1,
+        [_Location_name]: null,
+        [_Location_column]: 18,
+        [_Location_line]: 68,
+        [_Location_file]: "file:///C:/Users/talha/Documents/GitHub/flutter-heapstash/task_02_category_widget/lib/category_screen.dart"
+      });
+    },
+    get C8() {
+      return C[8] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "itemCount",
+        [_Location_column]: 9,
+        [_Location_line]: 66,
+        [_Location_file]: null
+      });
+    },
+    get C9() {
+      return C[9] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "itemBuilder",
+        [_Location_column]: 9,
+        [_Location_line]: 67,
+        [_Location_file]: null
+      });
+    },
+    get C7() {
+      return C[7] = dart.constList([C[8] || CT.C8, C[9] || CT.C9], T._LocationL());
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[7] || CT.C7,
+        [_Location_name]: null,
+        [_Location_column]: 23,
+        [_Location_line]: 65,
+        [_Location_file]: "file:///C:/Users/talha/Documents/GitHub/flutter-heapstash/task_02_category_widget/lib/category_screen.dart"
+      });
+    },
+    get C12() {
+      return C[12] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "color",
+        [_Location_column]: 7,
+        [_Location_line]: 64,
+        [_Location_file]: null
+      });
+    },
+    get C13() {
+      return C[13] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 7,
+        [_Location_line]: 65,
+        [_Location_file]: null
+      });
+    },
+    get C11() {
+      return C[11] = dart.constList([C[12] || CT.C12, C[13] || CT.C13], T._LocationL());
+    },
+    get C10() {
+      return C[10] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[11] || CT.C11,
+        [_Location_name]: null,
+        [_Location_column]: 22,
+        [_Location_line]: 63,
+        [_Location_file]: "file:///C:/Users/talha/Documents/GitHub/flutter-heapstash/task_02_category_widget/lib/category_screen.dart"
+      });
+    },
+    get C16() {
+      return C[16] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 9,
+        [_Location_line]: 83,
+        [_Location_file]: null
+      });
+    },
+    get C17() {
+      return C[17] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 9,
+        [_Location_line]: 84,
+        [_Location_file]: null
+      });
+    },
+    get C15() {
+      return C[15] = dart.constList([C[16] || CT.C16, C[17] || CT.C17], T._LocationL());
+    },
+    get C14() {
+      return C[14] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[15] || CT.C15,
+        [_Location_name]: null,
+        [_Location_column]: 14,
+        [_Location_line]: 82,
+        [_Location_file]: "file:///C:/Users/talha/Documents/GitHub/flutter-heapstash/task_02_category_widget/lib/category_screen.dart"
+      });
+    },
+    get C20() {
+      return C[20] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "elevation",
+        [_Location_column]: 7,
+        [_Location_line]: 79,
+        [_Location_file]: null
+      });
+    },
+    get C21() {
+      return C[21] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "backgroundColor",
+        [_Location_column]: 7,
+        [_Location_line]: 80,
+        [_Location_file]: null
+      });
+    },
+    get C22() {
+      return C[22] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "centerTitle",
+        [_Location_column]: 7,
+        [_Location_line]: 81,
+        [_Location_file]: null
+      });
+    },
+    get C23() {
+      return C[23] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "title",
+        [_Location_column]: 7,
+        [_Location_line]: 82,
+        [_Location_file]: null
+      });
+    },
+    get C19() {
+      return C[19] = dart.constList([C[20] || CT.C20, C[21] || CT.C21, C[22] || CT.C22, C[23] || CT.C23], T._LocationL());
+    },
+    get C18() {
+      return C[18] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[19] || CT.C19,
+        [_Location_name]: null,
+        [_Location_column]: 20,
+        [_Location_line]: 78,
+        [_Location_file]: "file:///C:/Users/talha/Documents/GitHub/flutter-heapstash/task_02_category_widget/lib/category_screen.dart"
+      });
+    },
+    get C26() {
+      return C[26] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "appBar",
+        [_Location_column]: 7,
+        [_Location_line]: 92,
+        [_Location_file]: null
+      });
+    },
+    get C27() {
+      return C[27] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "body",
+        [_Location_column]: 7,
+        [_Location_line]: 93,
+        [_Location_file]: null
+      });
+    },
+    get C25() {
+      return C[25] = dart.constList([C[26] || CT.C26, C[27] || CT.C27], T._LocationL());
+    },
+    get C24() {
+      return C[24] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[25] || CT.C25,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 91,
+        [_Location_file]: "file:///C:/Users/talha/Documents/GitHub/flutter-heapstash/task_02_category_widget/lib/category_screen.dart"
+      });
+    },
+    get C28() {
+      return C[28] = dart.constList(["Length", "Area", "Volume", "Mass", "Time", "Digital Storage", "Energy", "Currency"], T.StringL());
+    },
+    get C32() {
+      return C[32] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4292932337.0
+      });
+    },
+    get C33() {
+      return C[33] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4289912795.0
+      });
+    },
+    get C34() {
+      return C[34] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4286630852.0
+      });
+    },
+    get C35() {
+      return C[35] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4283283116.0
+      });
+    },
+    get C36() {
+      return C[36] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4280723098.0
+      });
+    },
+    get C37() {
+      return C[37] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4278228616.0
+      });
+    },
+    get C38() {
+      return C[38] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4278225275.0
+      });
+    },
+    get C39() {
+      return C[39] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4278221163.0
+      });
+    },
+    get C40() {
+      return C[40] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4278217052.0
+      });
+    },
+    get C41() {
+      return C[41] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4278209856.0
+      });
+    },
+    get C31() {
+      return C[31] = dart.constMap(T.intL(), T.ColorL(), [50, C[32] || CT.C32, 100, C[33] || CT.C33, 200, C[34] || CT.C34, 300, C[35] || CT.C35, 400, C[36] || CT.C36, 500, C[37] || CT.C37, 600, C[38] || CT.C38, 700, C[39] || CT.C39, 800, C[40] || CT.C40, 900, C[41] || CT.C41]);
+    },
+    get C30() {
+      return C[30] = dart.const({
+        __proto__: colors$.MaterialColor.prototype,
+        [Color_value]: 4278228616.0,
+        [ColorSwatch__swatch]: C[31] || CT.C31
+      });
+    },
+    get C44() {
+      return C[44] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4294964192.0
+      });
+    },
+    get C45() {
+      return C[45] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4294959282.0
+      });
+    },
+    get C46() {
+      return C[46] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4294954112.0
+      });
+    },
+    get C47() {
+      return C[47] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4294948685.0
+      });
+    },
+    get C48() {
+      return C[48] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4294944550.0
+      });
+    },
+    get C49() {
+      return C[49] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4294940672.0
+      });
+    },
+    get C50() {
+      return C[50] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4294675456.0
+      });
+    },
+    get C51() {
+      return C[51] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4294278144.0
+      });
+    },
+    get C52() {
+      return C[52] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4293880832.0
+      });
+    },
+    get C53() {
+      return C[53] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4293284096.0
+      });
+    },
+    get C43() {
+      return C[43] = dart.constMap(T.intL(), T.ColorL(), [50, C[44] || CT.C44, 100, C[45] || CT.C45, 200, C[46] || CT.C46, 300, C[47] || CT.C47, 400, C[48] || CT.C48, 500, C[49] || CT.C49, 600, C[50] || CT.C50, 700, C[51] || CT.C51, 800, C[52] || CT.C52, 900, C[53] || CT.C53]);
+    },
+    get C42() {
+      return C[42] = dart.const({
+        __proto__: colors$.MaterialColor.prototype,
+        [Color_value]: 4294940672.0,
+        [ColorSwatch__swatch]: C[43] || CT.C43
+      });
+    },
+    get C56() {
+      return C[56] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4294934699.0
+      });
+    },
+    get C57() {
+      return C[57] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4294918273.0
+      });
+    },
+    get C58() {
+      return C[58] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4294246487.0
+      });
+    },
+    get C59() {
+      return C[59] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4291105122.0
+      });
+    },
+    get C55() {
+      return C[55] = dart.constMap(T.intL(), T.ColorL(), [100, C[56] || CT.C56, 200, C[57] || CT.C57, 400, C[58] || CT.C58, 700, C[59] || CT.C59]);
+    },
+    get C54() {
+      return C[54] = dart.const({
+        __proto__: colors$.MaterialAccentColor.prototype,
+        [Color_value]: 4294918273.0,
+        [ColorSwatch__swatch]: C[55] || CT.C55
+      });
+    },
+    get C62() {
+      return C[62] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4286755327.0
+      });
+    },
+    get C63() {
+      return C[63] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4282682111.0
+      });
+    },
+    get C64() {
+      return C[64] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4280908287.0
+      });
+    },
+    get C65() {
+      return C[65] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4280902399.0
+      });
+    },
+    get C61() {
+      return C[61] = dart.constMap(T.intL(), T.ColorL(), [100, C[62] || CT.C62, 200, C[63] || CT.C63, 400, C[64] || CT.C64, 700, C[65] || CT.C65]);
+    },
+    get C60() {
+      return C[60] = dart.const({
+        __proto__: colors$.MaterialAccentColor.prototype,
+        [Color_value]: 4282682111.0,
+        [ColorSwatch__swatch]: C[61] || CT.C61
+      });
+    },
+    get C68() {
+      return C[68] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4294966759.0
+      });
+    },
+    get C69() {
+      return C[69] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4294965700.0
+      });
+    },
+    get C70() {
+      return C[70] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4294964637.0
+      });
+    },
+    get C71() {
+      return C[71] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4294963574.0
+      });
+    },
+    get C72() {
+      return C[72] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4294962776.0
+      });
+    },
+    get C73() {
+      return C[73] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4294961979.0
+      });
+    },
+    get C74() {
+      return C[74] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4294826037.0
+      });
+    },
+    get C75() {
+      return C[75] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4294688813.0
+      });
+    },
+    get C76() {
+      return C[76] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4294551589.0
+      });
+    },
+    get C77() {
+      return C[77] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4294278935.0
+      });
+    },
+    get C67() {
+      return C[67] = dart.constMap(T.intL(), T.ColorL(), [50, C[68] || CT.C68, 100, C[69] || CT.C69, 200, C[70] || CT.C70, 300, C[71] || CT.C71, 400, C[72] || CT.C72, 500, C[73] || CT.C73, 600, C[74] || CT.C74, 700, C[75] || CT.C75, 800, C[76] || CT.C76, 900, C[77] || CT.C77]);
+    },
+    get C66() {
+      return C[66] = dart.const({
+        __proto__: colors$.MaterialColor.prototype,
+        [Color_value]: 4294961979.0,
+        [ColorSwatch__swatch]: C[67] || CT.C67
+      });
+    },
+    get C80() {
+      return C[80] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4290377418.0
+      });
+    },
+    get C81() {
+      return C[81] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4285132974.0
+      });
+    },
+    get C82() {
+      return C[82] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4278249078.0
+      });
+    },
+    get C83() {
+      return C[83] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4278241363.0
+      });
+    },
+    get C79() {
+      return C[79] = dart.constMap(T.intL(), T.ColorL(), [100, C[80] || CT.C80, 200, C[81] || CT.C81, 400, C[82] || CT.C82, 700, C[83] || CT.C83]);
+    },
+    get C78() {
+      return C[78] = dart.const({
+        __proto__: colors$.MaterialAccentColor.prototype,
+        [Color_value]: 4285132974.0,
+        [ColorSwatch__swatch]: C[79] || CT.C79
+      });
+    },
+    get C86() {
+      return C[86] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4293558524.0
+      });
+    },
+    get C87() {
+      return C[87] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4292886779.0
+      });
+    },
+    get C88() {
+      return C[88] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4292149497.0
+      });
+    },
+    get C89() {
+      return C[89] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4289331455.0
+      });
+    },
+    get C85() {
+      return C[85] = dart.constMap(T.intL(), T.ColorL(), [100, C[86] || CT.C86, 200, C[87] || CT.C87, 400, C[88] || CT.C88, 700, C[89] || CT.C89]);
+    },
+    get C84() {
+      return C[84] = dart.const({
+        __proto__: colors$.MaterialAccentColor.prototype,
+        [Color_value]: 4292886779.0,
+        [ColorSwatch__swatch]: C[85] || CT.C85
+      });
+    },
+    get C92() {
+      return C[92] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4294962158.0
+      });
+    },
+    get C93() {
+      return C[93] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4294954450.0
+      });
+    },
+    get C94() {
+      return C[94] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4293892762.0
+      });
+    },
+    get C95() {
+      return C[95] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4293227379.0
+      });
+    },
+    get C96() {
+      return C[96] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4293874512.0
+      });
+    },
+    get C97() {
+      return C[97] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4294198070.0
+      });
+    },
+    get C98() {
+      return C[98] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4293212469.0
+      });
+    },
+    get C99() {
+      return C[99] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4292030255.0
+      });
+    },
+    get C100() {
+      return C[100] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4291176488.0
+      });
+    },
+    get C101() {
+      return C[101] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4290190364.0
+      });
+    },
+    get C91() {
+      return C[91] = dart.constMap(T.intL(), T.ColorL(), [50, C[92] || CT.C92, 100, C[93] || CT.C93, 200, C[94] || CT.C94, 300, C[95] || CT.C95, 400, C[96] || CT.C96, 500, C[97] || CT.C97, 600, C[98] || CT.C98, 700, C[99] || CT.C99, 800, C[100] || CT.C100, 900, C[101] || CT.C101]);
+    },
+    get C90() {
+      return C[90] = dart.const({
+        __proto__: colors$.MaterialColor.prototype,
+        [Color_value]: 4294198070.0,
+        [ColorSwatch__swatch]: C[91] || CT.C91
+      });
+    },
+    get C29() {
+      return C[29] = dart.constList([C[30] || CT.C30, C[42] || CT.C42, C[54] || CT.C54, C[60] || CT.C60, C[66] || CT.C66, C[78] || CT.C78, C[84] || CT.C84, C[90] || CT.C90], T.ColorL());
+    },
+    get C103() {
+      return C[103] = dart.const({
+        __proto__: icon_data.IconData.prototype,
+        [IconData_matchTextDirection]: false,
+        [IconData_fontPackage]: null,
+        [IconData_fontFamily]: "MaterialIcons",
+        [IconData_codePoint]: 58239
+      });
+    },
+    get C104() {
+      return C[104] = dart.const({
+        __proto__: icon_data.IconData.prototype,
+        [IconData_matchTextDirection]: false,
+        [IconData_fontPackage]: null,
+        [IconData_fontFamily]: "MaterialIcons",
+        [IconData_codePoint]: 62849
+      });
+    },
+    get C105() {
+      return C[105] = dart.const({
+        __proto__: icon_data.IconData.prototype,
+        [IconData_matchTextDirection]: false,
+        [IconData_fontPackage]: null,
+        [IconData_fontFamily]: "MaterialIcons",
+        [IconData_codePoint]: 63026
+      });
+    },
+    get C106() {
+      return C[106] = dart.const({
+        __proto__: icon_data.IconData.prototype,
+        [IconData_matchTextDirection]: false,
+        [IconData_fontPackage]: null,
+        [IconData_fontFamily]: "MaterialIcons",
+        [IconData_codePoint]: 58680
+      });
+    },
+    get C107() {
+      return C[107] = dart.const({
+        __proto__: icon_data.IconData.prototype,
+        [IconData_matchTextDirection]: false,
+        [IconData_fontPackage]: null,
+        [IconData_fontFamily]: "MaterialIcons",
+        [IconData_codePoint]: 58976
+      });
+    },
+    get C108() {
+      return C[108] = dart.const({
+        __proto__: icon_data.IconData.prototype,
+        [IconData_matchTextDirection]: false,
+        [IconData_fontPackage]: null,
+        [IconData_fontFamily]: "MaterialIcons",
+        [IconData_codePoint]: 983518
+      });
+    },
+    get C109() {
+      return C[109] = dart.const({
+        __proto__: icon_data.IconData.prototype,
+        [IconData_matchTextDirection]: false,
+        [IconData_fontPackage]: null,
+        [IconData_fontFamily]: "MaterialIcons",
+        [IconData_codePoint]: 63572
+      });
+    },
+    get C110() {
+      return C[110] = dart.const({
+        __proto__: icon_data.IconData.prototype,
+        [IconData_matchTextDirection]: false,
+        [IconData_fontPackage]: null,
+        [IconData_fontFamily]: "MaterialIcons",
+        [IconData_codePoint]: 62863
+      });
+    },
+    get C102() {
+      return C[102] = dart.constList([C[103] || CT.C103, C[104] || CT.C104, C[105] || CT.C105, C[106] || CT.C106, C[107] || CT.C107, C[108] || CT.C108, C[109] || CT.C109, C[110] || CT.C110], T.IconDataL());
+    },
+    get C113() {
+      return C[113] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4286634239.0
+      });
+    },
+    get C114() {
+      return C[114] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4282434815.0
+      });
+    },
+    get C115() {
+      return C[115] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4278235391.0
+      });
+    },
+    get C116() {
+      return C[116] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4278227434.0
+      });
+    },
+    get C112() {
+      return C[112] = dart.constMap(T.intL(), T.ColorL(), [100, C[113] || CT.C113, 200, C[114] || CT.C114, 400, C[115] || CT.C115, 700, C[116] || CT.C116]);
+    },
+    get C111() {
+      return C[111] = dart.const({
+        __proto__: colors$.MaterialAccentColor.prototype,
+        [Color_value]: 4282434815.0,
+        [ColorSwatch__swatch]: C[112] || CT.C112
+      });
+    }
+  }, false);
+  var C = Array(117).fill(void 0);
+  var I = ["package:task_02_category_widget/category_screen.dart"];
+  category_screen.CategoryScreen = class CategoryScreen extends framework.StatefulWidget {
+    createState() {
+      return new category_screen._CategoryScreenState.new();
+    }
+  };
+  (category_screen.CategoryScreen.new = function(opts) {
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    category_screen.CategoryScreen.__proto__.new.call(this, {$creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = category_screen.CategoryScreen.prototype;
+  dart.addTypeTests(category_screen.CategoryScreen);
+  dart.addTypeCaches(category_screen.CategoryScreen);
+  dart.setMethodSignature(category_screen.CategoryScreen, () => ({
+    __proto__: dart.getMethods(category_screen.CategoryScreen.__proto__),
+    createState: dart.fnType(dart.legacy(framework.State$(dart.legacy(framework.StatefulWidget))), [])
+  }));
+  dart.setLibraryUri(category_screen.CategoryScreen, I[0]);
+  var _retrieveUnitList = dart.privateName(category_screen, "_retrieveUnitList");
+  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
+  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
+  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
+  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
+  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
+  var Color_value = dart.privateName(ui, "Color.value");
+  var ColorSwatch__swatch = dart.privateName(colors, "ColorSwatch._swatch");
+  var IconData_matchTextDirection = dart.privateName(icon_data, "IconData.matchTextDirection");
+  var IconData_fontPackage = dart.privateName(icon_data, "IconData.fontPackage");
+  var IconData_fontFamily = dart.privateName(icon_data, "IconData.fontFamily");
+  var IconData_codePoint = dart.privateName(icon_data, "IconData.codePoint");
+  category_screen._CategoryScreenState = class _CategoryScreenState extends framework.State$(dart.legacy(category_screen.CategoryScreen)) {
+    [_retrieveUnitList](categoryName) {
+      return T.ListOfUnitL().generate(10, dart.fn(i => {
+        i = dart.notNull(i) + 1;
+        return new unit.Unit.new({name: dart.str(categoryName) + " Unit " + dart.str(i), conversion: i[$toDouble]()});
+      }, T.intLToUnitL()));
+    }
+    build(context) {
+      let listView = new container.Container.new({color: category_screen._themeColor, child: new scroll_view.ListView.builder({itemCount: 8, itemBuilder: dart.fn((context, index) => new category.Category.new({name: category_screen._CategoryScreenState._categoryNames[$_get](index), icon: category_screen._CategoryScreenState._icons[$_get](index), color: T.ColorSwatchL().as(category_screen._CategoryScreenState._baseColors[$_get](index)), units: this[_retrieveUnitList](category_screen._CategoryScreenState._categoryNames[$_get](index)), $creationLocationd_0dea112b090073317d4: C[0] || CT.C0}), T.BuildContextLAndintLToCategoryL()), $creationLocationd_0dea112b090073317d4: C[6] || CT.C6}), $creationLocationd_0dea112b090073317d4: C[10] || CT.C10});
+      let appBar = new app_bar.AppBar.new({elevation: 0, backgroundColor: category_screen._themeColor, centerTitle: true, title: new text.Text.new("Unit Converter", {style: new text_style.TextStyle.new({fontSize: 30, color: colors$.Colors.black}), $creationLocationd_0dea112b090073317d4: C[14] || CT.C14}), $creationLocationd_0dea112b090073317d4: C[18] || CT.C18});
+      return new scaffold.Scaffold.new({appBar: appBar, body: listView, $creationLocationd_0dea112b090073317d4: C[24] || CT.C24});
+    }
+  };
+  (category_screen._CategoryScreenState.new = function() {
+    category_screen._CategoryScreenState.__proto__.new.call(this);
+    ;
+  }).prototype = category_screen._CategoryScreenState.prototype;
+  dart.addTypeTests(category_screen._CategoryScreenState);
+  dart.addTypeCaches(category_screen._CategoryScreenState);
+  dart.setMethodSignature(category_screen._CategoryScreenState, () => ({
+    __proto__: dart.getMethods(category_screen._CategoryScreenState.__proto__),
+    [_retrieveUnitList]: dart.fnType(dart.legacy(core.List$(dart.legacy(unit.Unit))), [dart.legacy(core.String)]),
+    build: dart.fnType(dart.legacy(framework.Widget), [dart.legacy(framework.BuildContext)])
+  }));
+  dart.setLibraryUri(category_screen._CategoryScreenState, I[0]);
+  dart.defineLazy(category_screen._CategoryScreenState, {
+    /*category_screen._CategoryScreenState._categoryNames*/get _categoryNames() {
+      return C[28] || CT.C28;
+    },
+    /*category_screen._CategoryScreenState._baseColors*/get _baseColors() {
+      return C[29] || CT.C29;
+    },
+    /*category_screen._CategoryScreenState._icons*/get _icons() {
+      return C[102] || CT.C102;
+    }
+  }, true);
+  dart.defineLazy(category_screen, {
+    /*category_screen._listSize*/get _listSize() {
+      return 8;
+    },
+    /*category_screen._fontSize*/get _fontSize() {
+      return 30;
+    },
+    /*category_screen._elevation*/get _elevation() {
+      return 0;
+    },
+    /*category_screen._themeColor*/get _themeColor() {
+      return C[111] || CT.C111;
+    }
+  }, true);
+  dart.trackLibraries("packages/task_02_category_widget/category_screen.dart", {
+    "package:task_02_category_widget/category_screen.dart": category_screen
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["category_screen.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAamB;IAAsB;;;;AAHjC;;EAAgB;;;;;;;;;;;;;;;;;;;;;wBAwCc;AAClC,YAAY,0BAAS,IAAI,QAAK;AACtB,QAAN,IAAE,aAAF,CAAC,IAAI;AACL,cAAO,0BACwB,SAArB,YAAY,wBAAO,CAAC,eAChB,AAAE,CAAD;;IAGnB;UAG0B;AAClB,qBAAW,oCACR,oCACS,6DAED,SAAc,SAAa,UAC/B,iCACC,AAAc,2DAAC,KAAK,SACpB,AAAM,mDAAC,KAAK,8BACX,AAAW,wDAAC,KAAK,WACjB,wBAAkB,AAAc,2DAAC,KAAK;AAM/C,mBAAS,uDAEI,0CACJ,aACN,kBACL,0BACO,mDAES;AAKpB,YAAO,oCACG,MAAM,QACR,QAAQ;IAElB;;;;;EACF;;;;;;;;;;MA9Ee,mDAAc;;;MAWd,gDAAW;;;MAWX,2CAAM;;;;;MAnCf,yBAAS;;;MACT,yBAAS;;;MACT,0BAAU;;;MACV,2BAAW","file":"../../../../../../../packages/task_02_category_widget/category_screen.dart.lib.js"}');
+  // Exports:
+  return {
+    category_screen: category_screen
+  };
+}));
+
+//# sourceMappingURL=category_screen.dart.lib.js.map

@@ -1,7 +1,7 @@
 #!/bin/sh
 # This is a generated file; do not edit or check into version control.
-export "FLUTTER_ROOT=D:\Programs\flutter"
-export "FLUTTER_APPLICATION_PATH=D:\Workspaces\flutter\flutter-heapstash\task_02_category_widget"
+export "FLUTTER_ROOT=C:\flutter"
+export "FLUTTER_APPLICATION_PATH=C:\Users\talha\Documents\GitHub\flutter-heapstash\task_02_category_widget"
 export "COCOAPODS_PARALLEL_CODE_SIGN=true"
 export "FLUTTER_TARGET=lib\main.dart"
 export "FLUTTER_BUILD_DIR=build"
