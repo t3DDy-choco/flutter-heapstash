@@ -19,11 +19,12 @@ class ConverterScreen extends StatefulWidget {
 }
 
 class _ConverterScreenState extends State<ConverterScreen> {
-  // TODO: Set some variables, such as for keeping track of the user's input value and units
-
-  // TODO: Determine whether you need to override anything, such as initState()
-
-  // TODO: Add other helper functions. We've given you one, _format()
+  Unit _inputUnit;
+  Unit _outputUnit;
+  bool validationCheck = false;
+  double inputValue;
+  double outputValue;
+  String converted = '';
 
   /// Clean up conversion; trim trailing zeros, e.g. 5.500 -> 5.5, 10.0 -> 10
   String _format(double conversion) {
@@ -42,54 +43,175 @@ class _ConverterScreenState extends State<ConverterScreen> {
   }
 
   @override
-  Widget build(BuildContext context) {
-    // TODO: Create the 'input' group of widgets. This is a Column that
-    // includes the input value, and 'from' unit [Dropdown].
-    final Column input = Column(
-      children: [
-        TextField(),
-        DropdownButton(
-          items: <String>['One', 'Two', 'Free', 'Four']
-              .map<DropdownMenuItem<String>>((String value) {
-            return DropdownMenuItem<String>(
-              value: value,
-              child: Text(value),
-            );
-          }).toList(),
+  void initState() {
+    super.initState();
+    _returnDropDownItems();
+    _setDefaults();
+  }
+
+  void _setDefaults() {
+    setState(() {
+      _inputUnit = widget.units[0];
+      _outputUnit = widget.units[1];
+    });
+  }
+
+  List<DropdownMenuItem> _returnDropDownItems() {
+    var unitString = <DropdownMenuItem>[];
+    for (var unit in widget.units) {
+      unitString.add(
+        DropdownMenuItem(
+          value: unit.name,
+          child: Container(
+            child: Text(
+              unit.name,
+              softWrap: true,
+            ),
+          ),
         ),
+      );
+    }
+    return unitString;
+  }
+
+  Unit _updateValue(String name) {
+    for (var unit in widget.units) {
+      if (unit.name == name) {
+        return unit;
+      }
+    }
+    return null;
+  }
+
+  void _update(String value) {
+    setState(() {
+      if (value == null || value.isEmpty) {
+        converted = '';
+      } else {
+        try {
+          inputValue = double.parse(value);
+          validationCheck = false;
+          convert();
+        } on Exception catch (e) {
+          validationCheck = true;
+          print(e);
+        }
+      }
+    });
+  }
+
+  void convert() {
+    setState(() {
+      outputValue =
+          inputValue * (_outputUnit.conversion / _inputUnit.conversion);
+      converted = _format(outputValue);
+    });
+  }
+
+  void _inputChanged(dynamic unit) {
+    setState(() {
+      _inputUnit = _updateValue(unit);
+    });
+    if (inputValue != null) {
+      convert();
+    }
+  }
+
+  void _outputChanged(dynamic unit) {
+    setState(() {
+      _outputUnit = _updateValue(unit);
+    });
+    if (inputValue != null) {
+      convert();
+    }
+  }
+
+  Container _buildDropDown(Unit unit, var changed) {
+    return Container(
+      margin: EdgeInsets.only(top: 8.0),
+      padding: EdgeInsets.all(8.0),
+      decoration: BoxDecoration(
+        border: Border.all(
+          color: Colors.grey[400],
+          width: 1.0,
+        ),
+      ),
+      child: DropdownButtonHideUnderline(
+        child: DropdownButton(
+          isExpanded: true,
+          value: unit.name,
+          style: Theme.of(context).textTheme.headline6,
+          onChanged: changed,
+          items: _returnDropDownItems(),
+        ),
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final Column inputCol = Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        TextField(
+          keyboardType: TextInputType.number,
+          style: Theme.of(context).textTheme.headline4,
+          decoration: InputDecoration(
+            labelStyle: Theme.of(context).textTheme.headline4,
+            labelText: 'Input',
+            errorText: validationCheck ? "Enter numbers only!" : null,
+            errorStyle: TextStyle(color: Colors.red, fontSize: 18.0),
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(0.0),
+            ),
+          ),
+          onChanged: _update,
+        ),
+        _buildDropDown(_inputUnit, _inputChanged),
       ],
     );
 
-    // TODO: Create a compare arrows icon.
+    final Padding inputSection = Padding(
+      padding: EdgeInsets.all(16.0),
+      child: inputCol,
+    );
 
-    // TODO: Create the 'output' group of widgets. This is a Column that
-    // includes the output value, and 'to' unit [Dropdown].
+    final RotatedBox icon = RotatedBox(
+      quarterTurns: 1,
+      child: Icon(
+        Icons.compare_arrows,
+        size: 40.0,
+      ),
+    );
 
-    // TODO: Return the input, arrows, and output widgets, wrapped in a Column.
-
-    // TODO: Delete the below placeholder code.
-    final unitWidgets = widget.units.map((Unit unit) {
-      return Container(
-        color: widget.color,
-        margin: EdgeInsets.all(8.0),
-        padding: _padding,
-        child: Column(
-          children: <Widget>[
-            Text(
-              unit.name,
-              style: Theme.of(context).textTheme.headline5,
+    final Column outputCol = Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        InputDecorator(
+          child: Text(
+            converted,
+            style: Theme.of(context).textTheme.headline4,
+          ),
+          decoration: InputDecoration(
+            labelStyle: Theme.of(context).textTheme.headline4,
+            labelText: 'Output',
+            enabled: false,
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(0.0),
             ),
-            Text(
-              'Conversion: ${unit.conversion}',
-              style: Theme.of(context).textTheme.subtitle1,
-            ),
-          ],
+          ),
         ),
-      );
-    }).toList();
+        _buildDropDown(_outputUnit, _outputChanged),
+      ],
+    );
 
-    return ListView(
-      children: unitWidgets,
+    final Padding outputSection = Padding(
+      padding: _padding,
+      child: outputCol,
+    );
+
+    return Column(
+      children: [inputSection, icon, outputSection],
     );
   }
 }
