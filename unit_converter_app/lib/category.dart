@@ -8,7 +8,7 @@ class Category {
   final String name;
   final ColorSwatch color;
   final List<Unit> units;
-  final IconData iconLocation;
+  final String iconLocation;
 
   /// A [Category] saves the name of the Category (e.g. 'Length'), a list of its
   /// its color for the UI, units for conversions (e.g. 'Millimeter', 'Meter'),
